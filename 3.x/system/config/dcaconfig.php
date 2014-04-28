@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_article']['list']['label']['fields'][] = 'id';
 $GLOBALS['TL_DCA']['tl_article']['list']['label']['format'] = '%s <span style="color: #aaaaaa; padding-left: 3px;">(%s, ID: %s)</span>';
 
 // Narrow headlines
-$GLOBALS['TL_DCA']['tl_content']['fields']['headline']['options'] = array('h2', 'h3', 'h4', 'h5', 'h6');
+$GLOBALS['TL_DCA']['tl_content']['fields']['headline']['options'] = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 
 if (!\BackendUser::getInstance()->isAdmin)
 {
@@ -73,6 +73,7 @@ unset(
 
 // Sets the default content element
 $GLOBALS['TL_DCA']['tl_content']['fields']['type']['default'] = 'headline';
+$GLOBALS['TL_DCA']['tl_content']['fields']['headline']['default'] = 'h2';
 
-// Sets the default form field
-// $GLOBALS['TL_DCA']['tl_form_field']['fields']['type']['default'] = 'hidden';
+// Allow HTML in headlines
+$GLOBALS['TL_DCA']['tl_content']['fields']['headline']['eval']['allowHtml'] = true; 
